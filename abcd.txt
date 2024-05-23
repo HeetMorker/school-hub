@@ -1,0 +1,4 @@
+admin schema 
+    1.unsermae
+    2.password
+    3.

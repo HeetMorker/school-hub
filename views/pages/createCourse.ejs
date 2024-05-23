@@ -1,0 +1,107 @@
+   <!-- ======= Sidebar ======= -->
+   <%- include('../Partials/header') %>
+    <!-- bread crumb area -->
+    <div class="rts-bread-crumbarea-1 rts-section-gap bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb-main-wrapper">
+                        <h1 class="title">Create Course</h1>
+                        <!-- breadcrumb pagination area -->
+                        <div class="pagination-wrapper">
+                            <a href="index.html">Home</a>
+                            <i class="fa-regular fa-chevron-right"></i>
+                            <a class="active" href="create-course.html">Create Course</a>
+                        </div>
+                        <!-- breadcrumb pagination area end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bread crumb area end -->
+
+
+    <!-- create course area start -->
+    <div class="crea-te-course-area-start ptb--100">
+        <div class="container">
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-8">
+                    <div class="create-course-area-main-wrapper-inner">
+                        <div class="accordion" id="accordionExample">
+                            <!-- single accordion nitem area start -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Course Info
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <div class="course-information-area">
+                                            <form action="/courses/create" method="POST" class="top-form-create-course">
+                                                <div class="single-input">
+                                                    <label for="title">Course Title</label>
+                                                    <input id="title" type="text" name="title" placeholder="New Course" required>
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="teacher">Course Author</label>
+                                                    <input id="teacher" type="text" name="teacher" placeholder="Course Author" required>
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="lessons">Lessons</label>
+                                                    <input id="lessons" type="number" name="lessons" placeholder="lessons" required>
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="students">Students</label>
+                                                    <input id="students" type="text" name="students" placeholder="enter Students">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="rating">Rating</label>
+                                                    <input id="number" step="0.1" id="rating" name="rating" required>
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="category">Choose a category</label>
+                                                    <input id="category" type="text" name="category" placeholder="Search Course Category ex Design, Development, Business">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="imageUrl">Choose a category</label>
+                                                    <input id="imageUrl" type="url" name="imageUrl" placeholder="image URL">
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="price">Choose Price</label>
+                                                   <div class="d-flex">
+                                                    <span class="input-group-text px-4 fs-4" id="basic-addon1">$</span>
+                                                    <input id="price" type="number" class="form-control" name="price" placeholder="regular Price" required aria-label="Username" aria-describedby="basic-addon1">
+                                                   </div>
+                                                </div>
+                                                <div class="single-input">
+                                                    <label for="message-2">About Course</label>
+                                                    <textarea id="description" name="description" placeholder="New Course" required></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="preview-course-button-area">
+                                                            <button class="rts-btn btn-border" type="submit">Publish <i class="fa-light fa-arrow-right"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                        <div class="accordion" id="accordionExampls7">
+                            <!-- single accordion nitem area start -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- create course area end -->
+    
+   <!-- ======= Sidebar ======= -->
+   <%- include('../Partials/footer') %>
