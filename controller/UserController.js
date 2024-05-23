@@ -8,17 +8,16 @@ async function signupPage(req, res) {
         res.render('pages/register');
     } catch (error) {
         console.error(error);
-        res.status(500).redirect('pages/index');
+        res.status(500).redirect('back');
     }
 }
 
-// Function to handle user signup
 async function signup(req, res) {
     try {
         const { name, email, password } = req.body;
         const user = await userModel.findOne({ email });
         if (user) {
-            return res.redirect('pages/index');
+            return res.redirect('back');
         }
         const _SALT_ROUND = 10;
         const hashedPassword = await bcryptjs.hash(password, _SALT_ROUND);
@@ -27,17 +26,16 @@ async function signup(req, res) {
         res.status(201).redirect(`/user/login`);
     } catch (error) {
         console.error(error);
-        res.status(500).redirect('pages/index');
+        res.status(500).redirect('back');
     }
 }
 
-// Function to render login page
 async function loginPage(req, res) {
     try {
         res.render('pages/login');
     } catch (error) {
         console.error(error);
-        res.status(500).redirect('pages/index');
+        res.status(500).redirect('back');
     }
 }
 
@@ -47,11 +45,11 @@ async function login(req, res) {
         const { email, password } = req.body;
         const user = await userModel.findOne({ email });
         if (!user) {
-            return res.redirect('pages/index');
+            return res.redirect('back');
         }
         const isVerify = await bcryptjs.compare(password, user.password);
         if (!isVerify) {
-            return res.redirect('pages/index');
+            return res.redirect('back');
         }
         const payload = {
             sub: user._id,
@@ -67,7 +65,7 @@ async function login(req, res) {
         res.redirect('/');
     } catch (error) {
         console.error(error);
-        res.redirect('pages/index');
+        res.redirect('back');
     }
 }
 
@@ -78,7 +76,7 @@ async function logout(req, res) {
         res.redirect('/user/login');
     } catch (error) {
         console.error(error);
-        res.redirect('pages/index');
+        res.redirect('back');
     }
 }
 
